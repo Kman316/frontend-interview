@@ -2,4 +2,19 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: center;  /* Center the button horizontally */
+  width: 100%;
+}
+
+.loadMoreButton {
+  width: 100%;
+  max-width: 200px;  /* Maximum width of the button */
+  margin-top: 20px;  /* Space above the button */
 }

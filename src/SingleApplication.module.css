@@ -21,3 +21,13 @@
   color: #999;
   margin-bottom: 5px;
 }
+
+.email {
+  text-decoration: none;
+  color: #246AC1;
+}
+
+.email:hover {
+  text-decoration: none;
+  color: #1a5897;
+}

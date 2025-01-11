@@ -1,5 +1,13 @@
-import React from "react";
 import styles from "./SingleApplication.module.css";
+
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  const month = (date.getMonth() + 1).toString().padStart(2, "0");
+  const day = date.getDate().toString().padStart(2, "0"); 
+  const year = date.getFullYear(); 
+
+  return `${day}-${month}-${year}`; 
+};
 
 const SingleApplication = ({ application }) => {
   return (
@@ -14,19 +22,21 @@ const SingleApplication = ({ application }) => {
       </div>
       <div className={styles.cell}>
         <sub>Email</sub>
-        {application.email}
+        <a href={`mailto:${application.email}`} className={styles.email}>
+          {application.email}
+        </a>
       </div>
       <div className={styles.cell}>
         <sub>Loan Amount</sub>
-        {application.loan_amount}
+        {`£${application.loan_amount.toLocaleString()}`}
       </div>
       <div className={styles.cell}>
         <sub>Application Date</sub>
-        {application.date_created}
+        {formatDate(application.date_created)}
       </div>
       <div className={styles.cell}>
         <sub>Expiry date</sub>
-        {application.expiry_date}
+        {formatDate(application.expiry_date)}
       </div>
     </div>
   );
